@@ -21,12 +21,11 @@ var User = db.define('user', {
   googleId: Sequelize.STRING,
 }, {
   scopes: {
-    // populated: () => ({
-    //   include: [{
-    //     model: db.model('story'),
-    //     attributes: {exclude: ['paragraphs']}
-    //   }]
-    // })
+    children: () => ({
+      include: [{
+        model: db.model('person')
+      }]
+    })
   }
 });
 

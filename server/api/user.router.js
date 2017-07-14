@@ -2,10 +2,10 @@
 
 var router = require('express').Router();
 
-var HttpError = require('../../utils/HttpError');
+var HttpError = require('../utils/HttpError');
 
 const db = require('../db')
-const User = db.User
+const User = db.models.user
 
 router.param('id', function (req, res, next, id) {
   User.findById(id)
@@ -18,13 +18,13 @@ router.param('id', function (req, res, next, id) {
   .catch(next);
 });
 
-router.get('/', function (req, res, next) {
-  User.findAll({})
-  .then(function (users) {
-    res.json(users);
-  })
-  .catch(next);
-});
+// router.get('/', function (req, res, next) {
+//   User.findAll({})
+//   .then(function (users) {
+//     res.json(users);
+//   })
+//   .catch(next);
+// });
 
 router.post('/', function (req, res, next) {
   User.create(req.body)
@@ -35,11 +35,7 @@ router.post('/', function (req, res, next) {
 });
 
 router.get('/:id', function (req, res, next) {
-  req.requestedUser.reload(User.options.scopes.populated())
-  .then(function (requestedUser) {
-    res.json(requestedUser);
-  })
-  .catch(next);
+  res.json(req.requestedUser)
 });
 
 router.put('/:id', function (req, res, next) {
