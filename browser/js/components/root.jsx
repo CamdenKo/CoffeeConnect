@@ -1,15 +1,17 @@
 import React, { Component } from 'react'
-import store from '../store'
+import store, { getAllPeople } from '../store'
 import {Switch, BrowserRouter, Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
-import Sidebar from './sidebar.jsx'
+
+import People from './people.jsx'
+import Navbar from './navbar.jsx'
 
 export default class Root extends Component{
   constructor(){
     super()
   }
   componentDidMount(){
-
+    store.dispatch(getAllPeople())
   }
 
   render(){
@@ -17,7 +19,8 @@ export default class Root extends Component{
       <Provider store = {store}>
         <BrowserRouter>
           <main>
-            <Route path = '/' component = {Sidebar} />
+            <Route path = '/' component = {Navbar} />
+            <Route path = '/' component = {People} />
           </main>
         </BrowserRouter>
       </Provider>

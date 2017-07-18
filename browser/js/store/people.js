@@ -53,7 +53,7 @@ export function deletePerson(id){
   return function thunk(dispatch){
     axios.delete(`/api/person/${id}`)
     .then(res => res.data)
-    .then(deleted => dispatch(removePerson(deleted)))
+    .then(dispatch(removePerson(id)))
   }
 }
 

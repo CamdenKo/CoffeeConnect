@@ -1,5 +1,5 @@
 'use strict';
-
+const PersonNode = require('../../utils/PersonTree.js')
 var Sequelize = require('sequelize');
 
 var db = require('../index');
@@ -25,6 +25,11 @@ var Person = db.define('person', {
     type: Sequelize.JSON
   }
 }, {
+  getterMethods: {
+    node(){
+      return new PersonNode(this)
+    }
+  }
 });
 
 module.exports = Person;

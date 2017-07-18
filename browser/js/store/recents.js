@@ -1,0 +1,5 @@
+import axios from 'axios'
+
+const GET_RECENTS_FROM_SERVER = 'GET_RECENTS_FROM_SERVER'
+const GOT_RECENT = 'GOT_RECENT'
+const EDIT_RECENT = 'EDIT_RECENT'

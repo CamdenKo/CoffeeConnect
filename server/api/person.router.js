@@ -30,7 +30,13 @@ router.put('/:id', function(req,res,next){
 router.delete('/:id', function(req, res, next){
   const person = req.requestedPerson
   req.requestedPerson.destroy()
-  .then(() => res.status(200).json(person))
+  .then(() => res.sendStatus(200))
+  .catch(next)
+})
+
+router.get('/', function(req,res,next){
+  Person.findAll()
+  .then(people => res.json(people))
   .catch(next)
 })
 
