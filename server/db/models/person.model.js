@@ -24,16 +24,16 @@ var Person = db.define('person', {
   cellPhone: {
     type: Sequelize.STRING,
   },
-  notes: {
+  jobDescription: {
     type: Sequelize.TEXT,
   },
-  links: {
-    type: Sequelize.JSON
-  }
+  generalNotes: {
+    type: Sequelize.TEXT,
+  },
 }, {
   getterMethods: {
     node(){
-      return new PersonNode(this)
+      return new PersonNode(this) //TODO: convert this to sequelize only
     }
   }
 });

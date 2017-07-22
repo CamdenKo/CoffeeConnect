@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import {postPerson } from '../store'
+import { postPerson } from '../store'
 import { Collapsible, CollapsibleItem } from 'react-materialize'
 
 function PersonForm(props){
@@ -15,6 +15,7 @@ function PersonForm(props){
           <div className = 'input-field col s12 m6'>
             <input id = 'company' type = 'text' className = 'validate'/>
             <label>Company</label>
+            {/*TODO: add autocomplete suggestions*/}
           </div>
         </div>
         <Collapsible>
