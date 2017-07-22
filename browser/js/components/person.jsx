@@ -5,7 +5,7 @@ import {Col, Card, CardTitle} from 'react-materialize'
 const propsInBody = new Set(['imageUrl', 'email', 'address', 'notes'])
 function Person(props){
   return (
-    <Col m= {3} s = {6}>
+    <Col l= {4} m = {6} s = {12}>
       <Card title = {props.person.name}>
       {
         Object.keys(props.person).map(prop => propsInBody.has(prop) && props.person[prop] && <div>{props.person[prop]}<br/></div>)

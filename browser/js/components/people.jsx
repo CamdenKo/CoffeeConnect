@@ -1,11 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Person from './person.jsx'
 import { Row, Container } from 'react-materialize'
+
+import Person from './person.jsx'
+import AddPerson from './addPerson.jsx'
+import PersonForm from './personForm.jsx'
 
 function People(props){
   return(
     <Container>
+      <PersonForm />
       <Row>
 
       </Row>
@@ -14,6 +18,8 @@ function People(props){
           props.people.map(person => <Person key = {person.id} person = {person} />)
         }
       </Row>
+      <AddPerson />
+
     </Container>
   )
 }

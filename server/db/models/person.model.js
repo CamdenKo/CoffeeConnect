@@ -9,13 +9,19 @@ var Person = db.define('person', {
     type: Sequelize.STRING,
     allowNull: false,
   },
-  imageUrl: {
+  company: {
     type: Sequelize.STRING,
   },
   email: {
     type: Sequelize.STRING,
   },
-  address: {
+  linkedIn: {
+    type: Sequelize.STRING,
+  },
+  workPhone: {
+    type: Sequelize.STRING,
+  },
+  cellPhone: {
     type: Sequelize.STRING,
   },
   notes: {

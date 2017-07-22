@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { changeSearchValue, changeSuggestions, clearSuggestions} from '../store'
 
 import Autosuggest from 'react-autosuggest'
 
@@ -16,11 +17,11 @@ function SearchBar(props){
     return suggested
   }
 
-  const getSuggestionValue = suggestion => suggestion
+  const getSuggestionValue = suggestion => suggestion.name
 
   const renderSuggestion = suggestion => (
     <div>
-      {suggestion}
+      {suggestion.name}
     </div>
   )
 
@@ -46,6 +47,17 @@ function getAllVals(obj){
 function mapStateToProps(state){
   return{
     people: state.people,
+    search: state.search,
+    suggestions: state.suggestions,
+  }
+}
+
+function mapDispatchToProps(dispatch){
+  return {
+    onChange(event, {newValue}){
+      dispatch(changeSearchValue(newValue))
+    },
+    onSuggestions
   }
 }
 
