@@ -9,7 +9,7 @@ var Person = db.define('person', {
     type: Sequelize.STRING,
     allowNull: false,
   },
-  company: {
+  companyName: {
     type: Sequelize.STRING,
   },
   email: {

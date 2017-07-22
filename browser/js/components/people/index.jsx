@@ -2,23 +2,22 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Row, Container } from 'react-materialize'
 
-import Person from './person.jsx'
-import AddPerson from './addPerson.jsx'
-import PersonForm from './personForm.jsx'
+import Person from './person'
+import AddPerson from './addPerson'
+import NoPeople from './noPeople'
 
 function People(props){
   return(
     <Container>
-      <PersonForm />
-      <Row>
-
-      </Row>
+      {
+        !props.people.length && <NoPeople />
+      }
       <Row>
         {
           props.people.map(person => <Person key = {person.id} person = {person} />)
         }
       </Row>
-      <AddPerson />
+      <AddPerson pulse = {props.people.length === 0}/>
 
     </Container>
   )

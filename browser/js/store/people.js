@@ -43,6 +43,7 @@ export function getAllPeople(){
 
 export function postPerson(person){
   return function thunk(dispatch){
+    console.log('postPerson', person)
     axios.post('/api/person', person)
     .then(res => res.data)
     .then(posted => dispatch(gotPerson(posted)))

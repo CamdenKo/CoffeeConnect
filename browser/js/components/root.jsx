@@ -3,8 +3,8 @@ import store, { getAllPeople } from '../store'
 import {Switch, BrowserRouter, Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
 
-import People from './people.jsx'
-import Navbar from './navbar.jsx'
+import People from './people'
+import Navbar from './navbar'
 
 export default class Root extends Component{
   constructor(){

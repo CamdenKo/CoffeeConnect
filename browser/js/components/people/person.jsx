@@ -18,6 +18,7 @@ function Person(props){
 function mapStateToProps(state, oldProps){
   return {
     person: oldProps.person,
+    key: oldProps.key,
   }
 }
 

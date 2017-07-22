@@ -25720,7 +25720,7 @@
 	
 	var _people2 = _interopRequireDefault(_people);
 	
-	var _navbar = __webpack_require__(338);
+	var _navbar = __webpack_require__(340);
 	
 	var _navbar2 = _interopRequireDefault(_navbar);
 	
@@ -25914,6 +25914,7 @@
 	
 	function postPerson(person) {
 	  return function thunk(dispatch) {
+	    console.log('postPerson', person);
 	    _axios2.default.post('/api/person', person).then(function (res) {
 	      return res.data;
 	    }).then(function (posted) {
@@ -29238,17 +29239,17 @@
 	
 	var _reactMaterialize = __webpack_require__(286);
 	
-	var _person = __webpack_require__(335);
+	var _person = __webpack_require__(336);
 	
 	var _person2 = _interopRequireDefault(_person);
 	
-	var _addPerson = __webpack_require__(336);
+	var _addPerson = __webpack_require__(337);
 	
 	var _addPerson2 = _interopRequireDefault(_addPerson);
 	
-	var _personForm = __webpack_require__(337);
+	var _noPeople = __webpack_require__(339);
 	
-	var _personForm2 = _interopRequireDefault(_personForm);
+	var _noPeople2 = _interopRequireDefault(_noPeople);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -29256,8 +29257,7 @@
 	  return _react2.default.createElement(
 	    _reactMaterialize.Container,
 	    null,
-	    _react2.default.createElement(_personForm2.default, null),
-	    _react2.default.createElement(_reactMaterialize.Row, null),
+	    !props.people.length && _react2.default.createElement(_noPeople2.default, null),
 	    _react2.default.createElement(
 	      _reactMaterialize.Row,
 	      null,
@@ -29265,7 +29265,7 @@
 	        return _react2.default.createElement(_person2.default, { key: person.id, person: person });
 	      })
 	    ),
-	    _react2.default.createElement(_addPerson2.default, null)
+	    _react2.default.createElement(_addPerson2.default, { pulse: props.people.length === 0 })
 	  );
 	}
 	
@@ -29304,23 +29304,23 @@
 	
 	var _Button2 = _interopRequireDefault(_Button);
 	
-	var _Carousel = __webpack_require__(339);
+	var _Carousel = __webpack_require__(297);
 	
 	var _Carousel2 = _interopRequireDefault(_Carousel);
 	
-	var _Card = __webpack_require__(297);
+	var _Card = __webpack_require__(298);
 	
 	var _Card2 = _interopRequireDefault(_Card);
 	
-	var _CardPanel = __webpack_require__(298);
+	var _CardPanel = __webpack_require__(299);
 	
 	var _CardPanel2 = _interopRequireDefault(_CardPanel);
 	
-	var _CardTitle = __webpack_require__(299);
+	var _CardTitle = __webpack_require__(300);
 	
 	var _CardTitle2 = _interopRequireDefault(_CardTitle);
 	
-	var _Chip = __webpack_require__(300);
+	var _Chip = __webpack_require__(301);
 	
 	var _Chip2 = _interopRequireDefault(_Chip);
 	
@@ -29328,35 +29328,35 @@
 	
 	var _Col2 = _interopRequireDefault(_Col);
 	
-	var _Collapsible = __webpack_require__(301);
+	var _Collapsible = __webpack_require__(302);
 	
 	var _Collapsible2 = _interopRequireDefault(_Collapsible);
 	
-	var _CollapsibleItem = __webpack_require__(302);
+	var _CollapsibleItem = __webpack_require__(303);
 	
 	var _CollapsibleItem2 = _interopRequireDefault(_CollapsibleItem);
 	
-	var _Collection = __webpack_require__(303);
+	var _Collection = __webpack_require__(304);
 	
 	var _Collection2 = _interopRequireDefault(_Collection);
 	
-	var _CollectionItem = __webpack_require__(304);
+	var _CollectionItem = __webpack_require__(305);
 	
 	var _CollectionItem2 = _interopRequireDefault(_CollectionItem);
 	
-	var _Container = __webpack_require__(305);
+	var _Container = __webpack_require__(306);
 	
 	var _Container2 = _interopRequireDefault(_Container);
 	
-	var _Divider = __webpack_require__(306);
+	var _Divider = __webpack_require__(307);
 	
 	var _Divider2 = _interopRequireDefault(_Divider);
 	
-	var _Dropdown = __webpack_require__(307);
+	var _Dropdown = __webpack_require__(308);
 	
 	var _Dropdown2 = _interopRequireDefault(_Dropdown);
 	
-	var _Footer = __webpack_require__(308);
+	var _Footer = __webpack_require__(309);
 	
 	var _Footer2 = _interopRequireDefault(_Footer);
 	
@@ -29364,55 +29364,55 @@
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
-	var _Input = __webpack_require__(309);
+	var _Input = __webpack_require__(310);
 	
 	var _Input2 = _interopRequireDefault(_Input);
 	
-	var _MediaBox = __webpack_require__(310);
+	var _MediaBox = __webpack_require__(311);
 	
 	var _MediaBox2 = _interopRequireDefault(_MediaBox);
 	
-	var _MenuItem = __webpack_require__(311);
+	var _MenuItem = __webpack_require__(312);
 	
 	var _MenuItem2 = _interopRequireDefault(_MenuItem);
 	
-	var _Modal = __webpack_require__(312);
+	var _Modal = __webpack_require__(313);
 	
 	var _Modal2 = _interopRequireDefault(_Modal);
 	
-	var _NavItem = __webpack_require__(315);
+	var _NavItem = __webpack_require__(316);
 	
 	var _NavItem2 = _interopRequireDefault(_NavItem);
 	
-	var _Navbar = __webpack_require__(316);
+	var _Navbar = __webpack_require__(317);
 	
 	var _Navbar2 = _interopRequireDefault(_Navbar);
 	
-	var _Overlay = __webpack_require__(314);
+	var _Overlay = __webpack_require__(315);
 	
 	var _Overlay2 = _interopRequireDefault(_Overlay);
 	
-	var _OverlayTrigger = __webpack_require__(313);
+	var _OverlayTrigger = __webpack_require__(314);
 	
 	var _OverlayTrigger2 = _interopRequireDefault(_OverlayTrigger);
 	
-	var _Pagination = __webpack_require__(317);
+	var _Pagination = __webpack_require__(318);
 	
 	var _Pagination2 = _interopRequireDefault(_Pagination);
 	
-	var _PaginationButton = __webpack_require__(318);
+	var _PaginationButton = __webpack_require__(319);
 	
 	var _PaginationButton2 = _interopRequireDefault(_PaginationButton);
 	
-	var _Parallax = __webpack_require__(319);
+	var _Parallax = __webpack_require__(320);
 	
 	var _Parallax2 = _interopRequireDefault(_Parallax);
 	
-	var _Preloader = __webpack_require__(320);
+	var _Preloader = __webpack_require__(321);
 	
 	var _Preloader2 = _interopRequireDefault(_Preloader);
 	
-	var _ProgressBar = __webpack_require__(322);
+	var _ProgressBar = __webpack_require__(323);
 	
 	var _ProgressBar2 = _interopRequireDefault(_ProgressBar);
 	
@@ -29420,47 +29420,47 @@
 	
 	var _Row2 = _interopRequireDefault(_Row);
 	
-	var _SearchForm = __webpack_require__(323);
+	var _SearchForm = __webpack_require__(324);
 	
 	var _SearchForm2 = _interopRequireDefault(_SearchForm);
 	
-	var _Section = __webpack_require__(324);
+	var _Section = __webpack_require__(325);
 	
 	var _Section2 = _interopRequireDefault(_Section);
 	
-	var _SideNav = __webpack_require__(325);
+	var _SideNav = __webpack_require__(326);
 	
 	var _SideNav2 = _interopRequireDefault(_SideNav);
 	
-	var _SideNavItem = __webpack_require__(326);
+	var _SideNavItem = __webpack_require__(327);
 	
 	var _SideNavItem2 = _interopRequireDefault(_SideNavItem);
 	
-	var _Slide = __webpack_require__(328);
+	var _Slide = __webpack_require__(329);
 	
 	var _Slide2 = _interopRequireDefault(_Slide);
 	
-	var _Slider = __webpack_require__(329);
+	var _Slider = __webpack_require__(330);
 	
 	var _Slider2 = _interopRequireDefault(_Slider);
 	
-	var _Tab = __webpack_require__(330);
+	var _Tab = __webpack_require__(331);
 	
 	var _Tab2 = _interopRequireDefault(_Tab);
 	
-	var _Table = __webpack_require__(331);
+	var _Table = __webpack_require__(332);
 	
 	var _Table2 = _interopRequireDefault(_Table);
 	
-	var _Tabs = __webpack_require__(332);
+	var _Tabs = __webpack_require__(333);
 	
 	var _Tabs2 = _interopRequireDefault(_Tabs);
 	
-	var _Tag = __webpack_require__(333);
+	var _Tag = __webpack_require__(334);
 	
 	var _Tag2 = _interopRequireDefault(_Tag);
 	
-	var _Toast = __webpack_require__(334);
+	var _Toast = __webpack_require__(335);
 	
 	var _Toast2 = _interopRequireDefault(_Toast);
 	
@@ -30343,6 +30343,180 @@
 	  value: true
 	});
 	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _classnames = __webpack_require__(288);
+	
+	var _classnames2 = _interopRequireDefault(_classnames);
+	
+	var _propTypes = __webpack_require__(186);
+	
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Carousel = function (_React$Component) {
+	  _inherits(Carousel, _React$Component);
+	
+	  function Carousel(props) {
+	    _classCallCheck(this, Carousel);
+	
+	    var _this = _possibleConstructorReturn(this, (Carousel.__proto__ || Object.getPrototypeOf(Carousel)).call(this, props));
+	
+	    _this.renderFixedItem = _this.renderFixedItem.bind(_this);
+	    return _this;
+	  }
+	
+	  _createClass(Carousel, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      var _props$options = this.props.options,
+	          options = _props$options === undefined ? {} : _props$options;
+	
+	
+	      if (typeof $ !== 'undefined') {
+	        $(this._carousel).carousel(options);
+	      }
+	    }
+	  }, {
+	    key: 'renderItems',
+	    value: function renderItems(child, idx) {
+	      if (typeof child === 'string') {
+	        return _react2.default.createElement(
+	          'a',
+	          { className: 'carousel-item' },
+	          _react2.default.createElement('img', { src: child })
+	        );
+	      }
+	      return _react2.default.cloneElement(child, {
+	        className: (0, _classnames2.default)(child.props.className, 'carousel-item')
+	      });
+	    }
+	  }, {
+	    key: 'renderFixedItem',
+	    value: function renderFixedItem() {
+	      var fixedItem = this.props.fixedItem;
+	
+	      return fixedItem && _react2.default.createElement(
+	        'div',
+	        { className: 'carousel-fixed-item center' },
+	        fixedItem
+	      );
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+	
+	      var _props = this.props,
+	          children = _props.children,
+	          className = _props.className,
+	          carouselId = _props.carouselId,
+	          images = _props.images,
+	          _props$options2 = _props.options,
+	          options = _props$options2 === undefined ? {} : _props$options2;
+	
+	      var elemsToRender = children || images || [];
+	
+	      return elemsToRender && _react2.default.createElement(
+	        'div',
+	        {
+	          id: carouselId,
+	          ref: function ref(el) {
+	            _this2._carousel = el;
+	          },
+	          className: (0, _classnames2.default)('carousel', { 'carousel-slider': options.fullWidth }, className)
+	        },
+	        this.renderFixedItem(),
+	        _react2.default.Children.map(elemsToRender, this.renderItems)
+	      );
+	    }
+	  }]);
+	
+	  return Carousel;
+	}(_react2.default.Component);
+	
+	;
+	
+	Carousel.propTypes = {
+	  /*
+	  * Children to render as slider elements
+	  */
+	  children: _propTypes2.default.any,
+	  /*
+	  * Array of image url's
+	  */
+	  images: _propTypes2.default.arrayOf(_propTypes2.default.string),
+	  /*
+	  * Fixed element on slider
+	  */
+	  fixedItem: _propTypes2.default.node,
+	  /*
+	  * Additional classNames for carousel wrapper
+	  */
+	  className: _propTypes2.default.string,
+	  /*
+	  * Carousel ID for jQuery manipulating
+	  */
+	  carouselId: _propTypes2.default.string,
+	  /*
+	   * Carousel initialization options
+	   * <a href="http://materializecss.com/carousel.html">http://materializecss.com/carousel.html</a>
+	  */
+	  options: _propTypes2.default.shape({
+	    /*
+	    * Transition duration in milliseconds. (Default: 200)
+	    */
+	    duration: _propTypes2.default.number,
+	    /*
+	    * Perspective zoom. If 0, all items are the same size. (Default: -100)
+	    */
+	    dist: _propTypes2.default.number,
+	    /*
+	    * Set the spacing of the center item. (Default: 0)
+	    */
+	    shift: _propTypes2.default.number,
+	    /*
+	    * Set the padding between non center items. (Default: 0)
+	    */
+	    padding: _propTypes2.default.number,
+	    /*
+	    * Make the carousel a full width slider like the second example. (Default: false)
+	    */
+	    fullWidth: _propTypes2.default.bool,
+	    /*
+	    * Set to true to show indicators. (Default: false)
+	    */
+	    indicators: _propTypes2.default.bool,
+	    /*
+	     * Don't wrap around and cycle through items. (Default: false)
+	    */
+	    noWrap: _propTypes2.default.bool
+	  })
+	};
+	
+	exports.default = Carousel;
+
+/***/ }),
+/* 298 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -30489,7 +30663,7 @@
 	exports.default = Card;
 
 /***/ }),
-/* 298 */
+/* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30540,7 +30714,7 @@
 	exports.default = CardPanel;
 
 /***/ }),
-/* 299 */
+/* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30639,7 +30813,7 @@
 	exports.default = CardTitle;
 
 /***/ }),
-/* 300 */
+/* 301 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30686,7 +30860,7 @@
 	exports.default = Chip;
 
 /***/ }),
-/* 301 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30824,7 +30998,7 @@
 	exports.default = Collapsible;
 
 /***/ }),
-/* 302 */
+/* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31007,7 +31181,7 @@
 	exports.default = CollapsibleItem;
 
 /***/ }),
-/* 303 */
+/* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31109,7 +31283,7 @@
 	exports.default = Collection;
 
 /***/ }),
-/* 304 */
+/* 305 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31190,7 +31364,7 @@
 	exports.default = CollectionItem;
 
 /***/ }),
-/* 305 */
+/* 306 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31224,7 +31398,7 @@
 	exports.default = Container;
 
 /***/ }),
-/* 306 */
+/* 307 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31245,7 +31419,7 @@
 	exports.default = Divider;
 
 /***/ }),
-/* 307 */
+/* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31381,7 +31555,7 @@
 	exports.default = Dropdown;
 
 /***/ }),
-/* 308 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31497,7 +31671,7 @@
 	exports.default = Footer;
 
 /***/ }),
-/* 309 */
+/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31857,7 +32031,7 @@
 	exports.default = Input;
 
 /***/ }),
-/* 310 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31937,7 +32111,7 @@
 	exports.default = MediaBox;
 
 /***/ }),
-/* 311 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32020,7 +32194,7 @@
 	exports.default = MenuItem;
 
 /***/ }),
-/* 312 */
+/* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32049,7 +32223,7 @@
 	
 	var _classnames2 = _interopRequireDefault(_classnames);
 	
-	var _OverlayTrigger = __webpack_require__(313);
+	var _OverlayTrigger = __webpack_require__(314);
 	
 	var _OverlayTrigger2 = _interopRequireDefault(_OverlayTrigger);
 	
@@ -32239,7 +32413,7 @@
 	exports.default = Modal;
 
 /***/ }),
-/* 313 */
+/* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32258,7 +32432,7 @@
 	
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 	
-	var _Overlay2 = __webpack_require__(314);
+	var _Overlay2 = __webpack_require__(315);
 	
 	var _Overlay3 = _interopRequireDefault(_Overlay2);
 	
@@ -32363,7 +32537,7 @@
 	exports.default = OverlayTrigger;
 
 /***/ }),
-/* 314 */
+/* 315 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32487,7 +32661,7 @@
 	exports.default = Overlay;
 
 /***/ }),
-/* 315 */
+/* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32562,7 +32736,7 @@
 	exports.default = NavItem;
 
 /***/ }),
-/* 316 */
+/* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32736,7 +32910,7 @@
 	exports.default = Navbar;
 
 /***/ }),
-/* 317 */
+/* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32763,7 +32937,7 @@
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
-	var _PaginationButton = __webpack_require__(318);
+	var _PaginationButton = __webpack_require__(319);
 	
 	var _PaginationButton2 = _interopRequireDefault(_PaginationButton);
 	
@@ -32927,7 +33101,7 @@
 	exports.default = Pagination;
 
 /***/ }),
-/* 318 */
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32991,7 +33165,7 @@
 	exports.default = PaginationButton;
 
 /***/ }),
-/* 319 */
+/* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -33068,7 +33242,7 @@
 	exports.default = Parallax;
 
 /***/ }),
-/* 320 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -33091,7 +33265,7 @@
 	
 	var _classnames2 = _interopRequireDefault(_classnames);
 	
-	var _Spinner = __webpack_require__(321);
+	var _Spinner = __webpack_require__(322);
 	
 	var _Spinner2 = _interopRequireDefault(_Spinner);
 	
@@ -33179,7 +33353,7 @@
 	exports.default = Preloader;
 
 /***/ }),
-/* 321 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -33247,7 +33421,7 @@
 	exports.default = Spinner;
 
 /***/ }),
-/* 322 */
+/* 323 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -33305,7 +33479,7 @@
 	exports.default = ProgressBar;
 
 /***/ }),
-/* 323 */
+/* 324 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -33353,7 +33527,7 @@
 	exports.default = SearchForm;
 
 /***/ }),
-/* 324 */
+/* 325 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -33387,7 +33561,7 @@
 	exports.default = Section;
 
 /***/ }),
-/* 325 */
+/* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -33507,7 +33681,7 @@
 	exports.default = SideNav;
 
 /***/ }),
-/* 326 */
+/* 327 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -33532,7 +33706,7 @@
 	
 	var _classnames2 = _interopRequireDefault(_classnames);
 	
-	var _UserView = __webpack_require__(327);
+	var _UserView = __webpack_require__(328);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -33612,7 +33786,7 @@
 	exports.default = SideNavItem;
 
 /***/ }),
-/* 327 */
+/* 328 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -33710,7 +33884,7 @@
 	exports.default = UserView;
 
 /***/ }),
-/* 328 */
+/* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -33836,7 +34010,7 @@
 	exports.default = Slide;
 
 /***/ }),
-/* 329 */
+/* 330 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -33951,7 +34125,7 @@
 	exports.default = Slider;
 
 /***/ }),
-/* 330 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34028,7 +34202,7 @@
 	exports.default = Tab;
 
 /***/ }),
-/* 331 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34137,7 +34311,7 @@
 	exports.default = Table;
 
 /***/ }),
-/* 332 */
+/* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34277,7 +34451,7 @@
 	exports.default = Tabs;
 
 /***/ }),
-/* 333 */
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34294,7 +34468,7 @@
 	
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 	
-	var _Chip = __webpack_require__(300);
+	var _Chip = __webpack_require__(301);
 	
 	var _Chip2 = _interopRequireDefault(_Chip);
 	
@@ -34316,7 +34490,7 @@
 	exports.default = Tag;
 
 /***/ }),
-/* 334 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34397,7 +34571,7 @@
 	exports.default = Toast;
 
 /***/ }),
-/* 335 */
+/* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34438,14 +34612,15 @@
 	
 	function mapStateToProps(state, oldProps) {
 	  return {
-	    person: oldProps.person
+	    person: oldProps.person,
+	    key: oldProps.key
 	  };
 	}
 	
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(Person);
 
 /***/ }),
-/* 336 */
+/* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34461,13 +34636,32 @@
 	
 	var _reactMaterialize = __webpack_require__(286);
 	
-	var _personForm = __webpack_require__(337);
+	var _personForm = __webpack_require__(338);
 	
 	var _personForm2 = _interopRequireDefault(_personForm);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	function AddPerson() {
+	function AddPerson(props) {
+	  console.log(props.pulse);
+	  var button = props.pulse ? _react2.default.createElement(
+	    'a',
+	    { className: 'btn-floating waves-effect waves-light btn pulse btn-large red' },
+	    _react2.default.createElement(
+	      'i',
+	      { className: 'large material-icons' },
+	      'add'
+	    )
+	  ) : _react2.default.createElement(
+	    'a',
+	    { className: 'btn-floating waves-effect waves-light btn-large red' },
+	    _react2.default.createElement(
+	      'i',
+	      { className: 'large material-icons' },
+	      'add'
+	    )
+	  );
+	
 	  return _react2.default.createElement(
 	    _reactMaterialize.Modal,
 	    {
@@ -34475,22 +34669,14 @@
 	      trigger: _react2.default.createElement(
 	        'div',
 	        { className: 'fixed-action-btn' },
-	        _react2.default.createElement(
-	          'a',
-	          { className: 'btn-floating waves-effect waves-light btn-large red' },
-	          _react2.default.createElement(
-	            'i',
-	            { className: 'large material-icons' },
-	            'add'
-	          )
-	        )
+	        button
 	      ) },
 	    _react2.default.createElement(_personForm2.default, null)
 	  );
 	}
 
 /***/ }),
-/* 337 */
+/* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34506,8 +34692,6 @@
 	var _reactRedux = __webpack_require__(278);
 	
 	var _store = __webpack_require__(225);
-	
-	var _reactMaterialize = __webpack_require__(286);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -34543,14 +34727,24 @@
 	        )
 	      ),
 	      _react2.default.createElement(
-	        _reactMaterialize.Collapsible,
-	        null,
+	        'ul',
+	        { className: 'collapsible', 'data-collapsible': 'accordion' },
 	        _react2.default.createElement(
-	          _reactMaterialize.CollapsibleItem,
-	          { header: 'Contact Information', icon: 'assignment' },
+	          'li',
+	          null,
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'row' },
+	            { className: 'collapsible-header' },
+	            _react2.default.createElement(
+	              'i',
+	              { className: 'material-icons' },
+	              'assignment'
+	            ),
+	            'Contact Information'
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'collapsible-body row' },
 	            _react2.default.createElement(
 	              'div',
 	              { className: 'input-field col s12 m6' },
@@ -34574,7 +34768,7 @@
 	            _react2.default.createElement(
 	              'div',
 	              { className: 'input-field col s12 m6' },
-	              _react2.default.createElement('input', { id: 'phone', type: 'tel', className: 'validate' }),
+	              _react2.default.createElement('input', { id: 'workPhone', type: 'tel', className: 'validate' }),
 	              _react2.default.createElement(
 	                'label',
 	                null,
@@ -34584,7 +34778,7 @@
 	            _react2.default.createElement(
 	              'div',
 	              { className: 'input-field col s12 m6' },
-	              _react2.default.createElement('input', { id: 'phone', type: 'tel', className: 'validate' }),
+	              _react2.default.createElement('input', { id: 'cellPhone', type: 'tel', className: 'validate' }),
 	              _react2.default.createElement(
 	                'label',
 	                null,
@@ -34594,11 +34788,21 @@
 	          )
 	        ),
 	        _react2.default.createElement(
-	          _reactMaterialize.CollapsibleItem,
-	          { header: 'Notes', icon: 'note' },
+	          'li',
+	          null,
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'row' },
+	            { className: 'collapsible-header' },
+	            _react2.default.createElement(
+	              'i',
+	              { className: 'material-icons' },
+	              'note'
+	            ),
+	            'Notes'
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'collapsible-body row' },
 	            _react2.default.createElement(
 	              'div',
 	              { className: 'input-field col s12' },
@@ -34648,14 +34852,58 @@
 	  return {
 	    sendPerson: function sendPerson(evt) {
 	      evt.preventDefault();
-	      dispatch((0, _store.postPerson)());
+	      console.log(evt.target);
+	      var person = {
+	        name: evt.target.name.value,
+	        companyName: evt.target.company.value,
+	        email: evt.target.email.value,
+	        linkedIn: evt.target.linkedIn.value,
+	        workPhone: evt.target.workPhone.value,
+	        cellPhone: evt.target.cellPhone.value,
+	        jobDescription: evt.target.jobDescription.value,
+	        generalNotes: evt.target.generalNotes.value
+	      };
+	      dispatch((0, _store.postPerson)(person));
 	    }
 	  };
 	}
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(PersonForm);
 
 /***/ }),
-/* 338 */
+/* 339 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = noPeople;
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function noPeople() {
+	  return _react2.default.createElement(
+	    "div",
+	    { className: "card" },
+	    _react2.default.createElement(
+	      "div",
+	      { className: "center-align card-content" },
+	      _react2.default.createElement(
+	        "span",
+	        { className: "card-title" },
+	        "Nothing Here... Yet."
+	      )
+	    )
+	  );
+	}
+
+/***/ }),
+/* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34693,180 +34941,6 @@
 	}
 	
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(nav);
-
-/***/ }),
-/* 339 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _classnames = __webpack_require__(288);
-	
-	var _classnames2 = _interopRequireDefault(_classnames);
-	
-	var _propTypes = __webpack_require__(186);
-	
-	var _propTypes2 = _interopRequireDefault(_propTypes);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var Carousel = function (_React$Component) {
-	  _inherits(Carousel, _React$Component);
-	
-	  function Carousel(props) {
-	    _classCallCheck(this, Carousel);
-	
-	    var _this = _possibleConstructorReturn(this, (Carousel.__proto__ || Object.getPrototypeOf(Carousel)).call(this, props));
-	
-	    _this.renderFixedItem = _this.renderFixedItem.bind(_this);
-	    return _this;
-	  }
-	
-	  _createClass(Carousel, [{
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
-	      var _props$options = this.props.options,
-	          options = _props$options === undefined ? {} : _props$options;
-	
-	
-	      if (typeof $ !== 'undefined') {
-	        $(this._carousel).carousel(options);
-	      }
-	    }
-	  }, {
-	    key: 'renderItems',
-	    value: function renderItems(child, idx) {
-	      if (typeof child === 'string') {
-	        return _react2.default.createElement(
-	          'a',
-	          { className: 'carousel-item' },
-	          _react2.default.createElement('img', { src: child })
-	        );
-	      }
-	      return _react2.default.cloneElement(child, {
-	        className: (0, _classnames2.default)(child.props.className, 'carousel-item')
-	      });
-	    }
-	  }, {
-	    key: 'renderFixedItem',
-	    value: function renderFixedItem() {
-	      var fixedItem = this.props.fixedItem;
-	
-	      return fixedItem && _react2.default.createElement(
-	        'div',
-	        { className: 'carousel-fixed-item center' },
-	        fixedItem
-	      );
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var _this2 = this;
-	
-	      var _props = this.props,
-	          children = _props.children,
-	          className = _props.className,
-	          carouselId = _props.carouselId,
-	          images = _props.images,
-	          _props$options2 = _props.options,
-	          options = _props$options2 === undefined ? {} : _props$options2;
-	
-	      var elemsToRender = children || images || [];
-	
-	      return elemsToRender && _react2.default.createElement(
-	        'div',
-	        {
-	          id: carouselId,
-	          ref: function ref(el) {
-	            _this2._carousel = el;
-	          },
-	          className: (0, _classnames2.default)('carousel', { 'carousel-slider': options.fullWidth }, className)
-	        },
-	        this.renderFixedItem(),
-	        _react2.default.Children.map(elemsToRender, this.renderItems)
-	      );
-	    }
-	  }]);
-	
-	  return Carousel;
-	}(_react2.default.Component);
-	
-	;
-	
-	Carousel.propTypes = {
-	  /*
-	  * Children to render as slider elements
-	  */
-	  children: _propTypes2.default.any,
-	  /*
-	  * Array of image url's
-	  */
-	  images: _propTypes2.default.arrayOf(_propTypes2.default.string),
-	  /*
-	  * Fixed element on slider
-	  */
-	  fixedItem: _propTypes2.default.node,
-	  /*
-	  * Additional classNames for carousel wrapper
-	  */
-	  className: _propTypes2.default.string,
-	  /*
-	  * Carousel ID for jQuery manipulating
-	  */
-	  carouselId: _propTypes2.default.string,
-	  /*
-	   * Carousel initialization options
-	   * <a href="http://materializecss.com/carousel.html">http://materializecss.com/carousel.html</a>
-	  */
-	  options: _propTypes2.default.shape({
-	    /*
-	    * Transition duration in milliseconds. (Default: 200)
-	    */
-	    duration: _propTypes2.default.number,
-	    /*
-	    * Perspective zoom. If 0, all items are the same size. (Default: -100)
-	    */
-	    dist: _propTypes2.default.number,
-	    /*
-	    * Set the spacing of the center item. (Default: 0)
-	    */
-	    shift: _propTypes2.default.number,
-	    /*
-	    * Set the padding between non center items. (Default: 0)
-	    */
-	    padding: _propTypes2.default.number,
-	    /*
-	    * Make the carousel a full width slider like the second example. (Default: false)
-	    */
-	    fullWidth: _propTypes2.default.bool,
-	    /*
-	    * Set to true to show indicators. (Default: false)
-	    */
-	    indicators: _propTypes2.default.bool,
-	    /*
-	     * Don't wrap around and cycle through items. (Default: false)
-	    */
-	    noWrap: _propTypes2.default.bool
-	  })
-	};
-	
-	exports.default = Carousel;
 
 /***/ })
 /******/ ]);
