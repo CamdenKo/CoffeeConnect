@@ -25724,6 +25724,10 @@
 	
 	var _navbar2 = _interopRequireDefault(_navbar);
 	
+	var _personView = __webpack_require__(341);
+	
+	var _personView2 = _interopRequireDefault(_personView);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -25759,7 +25763,8 @@
 	            'main',
 	            null,
 	            _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _navbar2.default }),
-	            _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _people2.default })
+	            _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _people2.default }),
+	            _react2.default.createElement(_reactRouterDom.Route, { path: '/person/:personId', component: _personView2.default })
 	          )
 	        )
 	      );
@@ -29239,9 +29244,9 @@
 	
 	var _reactMaterialize = __webpack_require__(286);
 	
-	var _person = __webpack_require__(336);
+	var _personCard = __webpack_require__(336);
 	
-	var _person2 = _interopRequireDefault(_person);
+	var _personCard2 = _interopRequireDefault(_personCard);
 	
 	var _addPerson = __webpack_require__(337);
 	
@@ -29262,7 +29267,7 @@
 	      _reactMaterialize.Row,
 	      null,
 	      props.people.map(function (person) {
-	        return _react2.default.createElement(_person2.default, { key: person.id, person: person });
+	        return _react2.default.createElement(_personCard2.default, { key: person.id, person: person });
 	      })
 	    ),
 	    _react2.default.createElement(_addPerson2.default, { pulse: props.people.length === 0 })
@@ -34590,30 +34595,53 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var propsInBody = new Set(['imageUrl', 'email', 'address', 'notes']);
+	var propsInBody = new Set(['email', 'linkedIn', 'address', 'notes', 'workPhone', 'cellPhone']);
 	function Person(props) {
+	  console.log(props.person.companyName.length);
 	  return _react2.default.createElement(
 	    _reactMaterialize.Col,
-	    { l: 4, m: 6, s: 12 },
+	    { l: 4, m: 6, s: 12, key: props.person.id },
 	    _react2.default.createElement(
-	      _reactMaterialize.Card,
-	      { title: props.person.name },
-	      Object.keys(props.person).map(function (prop) {
-	        return propsInBody.has(prop) && props.person[prop] && _react2.default.createElement(
+	      'a',
+	      { className: 'card-person' },
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'card', key: props.person.id },
+	        _react2.default.createElement(
 	          'div',
-	          null,
-	          props.person[prop],
-	          _react2.default.createElement('br', null)
-	        );
-	      })
+	          { className: 'card-content' },
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'card-title' },
+	            props.person.companyName.length ? _react2.default.createElement(
+	              'div',
+	              null,
+	              props.person.name,
+	              ' - ',
+	              _react2.default.createElement(
+	                'i',
+	                null,
+	                props.person.companyName
+	              )
+	            ) : props.person.name
+	          ),
+	          Object.keys(props.person).map(function (prop) {
+	            return propsInBody.has(prop) && props.person[prop] && _react2.default.createElement(
+	              'div',
+	              { key: prop },
+	              props.person[prop],
+	              _react2.default.createElement('br', null)
+	            );
+	          })
+	        )
+	      )
 	    )
 	  );
 	}
 	
 	function mapStateToProps(state, oldProps) {
 	  return {
-	    person: oldProps.person,
-	    key: oldProps.key
+	    person: oldProps.person
 	  };
 	}
 	
@@ -34643,7 +34671,6 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function AddPerson(props) {
-	  console.log(props.pulse);
 	  var button = props.pulse ? _react2.default.createElement(
 	    'a',
 	    { className: 'btn-floating waves-effect waves-light btn pulse btn-large red' },
@@ -34923,14 +34950,27 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function nav(props) {
-	  return _react2.default.createElement(
-	    _reactMaterialize.Navbar,
-	    { brand: 'CoffeeConnect', right: true },
+	  return (
+	    //TODO: FIX SPACING
 	    _react2.default.createElement(
-	      _reactMaterialize.NavItem,
-	      null,
-	      'NavItem'
+	      _reactMaterialize.Navbar,
+	      { brand: 'CoffeeConnect', right: true },
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'container' },
+	        _react2.default.createElement(
+	          _reactMaterialize.NavItem,
+	          null,
+	          'NavItem'
+	        )
+	      )
 	    )
+	    // <nav role = 'navigation'>
+	    //   <div className = 'nav-wrapper container'>
+	    //     <a>Coffee Connect</a>
+	    //   </div>
+	    // </nav>
+	
 	  );
 	}
 	
@@ -34941,6 +34981,72 @@
 	}
 	
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(nav);
+
+/***/ }),
+/* 341 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRedux = __webpack_require__(278);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function PersonView(props) {
+	  // console.log('personId', props.personId)
+	  console.log(props.people, 'props.peoples');
+	  return _react2.default.createElement(
+	    'div',
+	    null,
+	    'PERSON VIEW',
+	    props.people.map(function (pers) {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'section' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'container' },
+	          _react2.default.createElement(
+	            'h1',
+	            { className: 'header center' },
+	            pers.name
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'row center' },
+	            _react2.default.createElement(
+	              'h5',
+	              { className: 'header col s12 light' },
+	              pers.companyName
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'row' },
+	            _react2.default.createElement('div', { className: 'col s6 m4' })
+	          )
+	        )
+	      );
+	    })
+	  );
+	}
+	
+	function mapStateToProps(state, oldProps) {
+	  return {
+	    people: state.people
+	    // personId: oldProps.params.personId,
+	  };
+	}
+	
+	exports.default = (0, _reactRedux.connect)(mapStateToProps)(PersonView);
 
 /***/ })
 /******/ ]);

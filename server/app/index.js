@@ -10,13 +10,13 @@ app.use(require('./body-parsing.middleware'));
 
 app.use('/api', require('../api/'));
 
-// var validFrontendRoutes = ['/', '/stories', '/users', '/stories/:id', '/users/:id', '/signup', '/login'];
-// var indexPath = path.join(__dirname, '..', '..', 'browser', 'index.html');
-// validFrontendRoutes.forEach(function (stateRoute) {
-//   app.get(stateRoute, function (req, res) {
-//     res.sendFile(indexPath);
-//   });
-// });
+var validFrontendRoutes = ['/', '/person/:personId', '/users', '/stories/:id', '/users/:id', '/signup', '/login'];
+var indexPath = path.join(__dirname, '..', '..', 'browser', 'index.html');
+validFrontendRoutes.forEach(function (stateRoute) {
+  app.get(stateRoute, function (req, res) {
+    res.sendFile(indexPath);
+  });
+});
 
 app.use(require('./statics.middleware'));
 

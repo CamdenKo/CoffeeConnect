@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Row, Container } from 'react-materialize'
 
-import Person from './person'
+import PersonCard from './personCard'
 import AddPerson from './addPerson'
 import NoPeople from './noPeople'
 
@@ -14,7 +14,7 @@ function People(props){
       }
       <Row>
         {
-          props.people.map(person => <Person key = {person.id} person = {person} />)
+          props.people.map(person => <PersonCard key = {person.id} person = {person} />)
         }
       </Row>
       <AddPerson pulse = {props.people.length === 0}/>

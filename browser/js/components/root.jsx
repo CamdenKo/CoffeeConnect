@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 
 import People from './people'
 import Navbar from './navbar'
+import PersonView from './personView'
 
 export default class Root extends Component{
   constructor(){
@@ -20,7 +21,8 @@ export default class Root extends Component{
         <BrowserRouter>
           <main>
             <Route path = '/' component = {Navbar} />
-            <Route path = '/' component = {People} />
+            <Route exact path = '/' component = {People} />
+            <Route path = '/person/:personId' component = {PersonView} />
           </main>
         </BrowserRouter>
       </Provider>
